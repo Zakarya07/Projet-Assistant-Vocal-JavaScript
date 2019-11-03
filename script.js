@@ -14,11 +14,15 @@ const weather = [`Pour aujourd'hui le soleil sera au rendez-vous`,
 'la température actuel est de 6° celsius'];
 
 const lightSpeed = [`La vitesse de la lumière dans le vide, communément notée c pour «célérité» est une constante physique
- universelle et un invariant relativiste, importante dans de nombreux domaines de la physique. Sa valeur exacte est 299 792 458 m/s (environ 3 × 108 m/s ou 300 000 km/s). Selon la relativité restreinte, la vitesse
+ universelle et un invariant relativiste, importante dans de nombreux domaines de la physique. Sa valeur exacte est 299 792 458 m/s
+  (environ 3 × 108 m/s ou 300 000 km/s). Selon la relativité restreinte, la vitesse
  de la lumière dans le vide est la vitesse maximale que peuvent atteindre toutes formes de matière ou d'information dans l'univers. 
- La lumière est l'élément le plus rapide de l'univers, pour aller de la terre à la lune il faudrait à peine 1.2 seconde pour la lumière pour y parvenir`];
+ La lumière est l'élément le plus rapide de l'univers, pour aller de la terre à la lune il faudrait à peine 1.2 seconde pour
+  la lumière pour y parvenir`];
 
- const 
+  const testingProject = ['vous avez dit test pour voir si je fonctionner correctement.. , ne vous inquiétez pas je marche trés bien grâce à vous !']
+
+  
 
 
 const recognition = new SpeechRecognition();
@@ -69,8 +73,16 @@ else if (message.includes('Quel est')||message.includes('quelle est')|| message.
 
 
 
+else if (message.includes('test')){
+    const answerForTest = testingProject[Math.floor(Math.random()*testingProject.length)];
+    speech.text =answerForTest;
+
+}
+
+
+
 else{
-    speech.text = `Je ne comprends pas`;
+    speech.text = `Désolé, je ne comprends pas`;
 
 }
 
@@ -78,8 +90,8 @@ else{
 
 
     speech.volume = 1;
-    speech.rate = 2;
-    speech.pitch=1;
+    speech.rate = 1.8;
+    speech.pitch=2;
 
     window.speechSynthesis.speak(speech);
 
