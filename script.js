@@ -3,10 +3,12 @@ const content = document.querySelector(".content");
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
+
+const hello= ["Bonjour","Salut à vous", "Héi", "Hellow !", "How are you ?","Salut !", "Salut bébé !", "Hey bèiby!"]
+
 const greetings = [`Je vais bien merci`,
  'Je suis trés gentil',
-  'Merci de demander, et vous', 
-  'Allez lache moi', 'Gaulmon de banlieu'];
+  'Merci de me demander, et vous ?', 'Gaulmon de banlieu'];
 
 const weather = [`Pour aujourd'hui le soleil sera au rendez-vous`,
  'Il pleut, il pleut bergère rentrez les moutons,rentrez les moutons, non sérieusement, prévoyez un parapluie ',
@@ -20,7 +22,8 @@ const lightSpeed = [`La vitesse de la lumière dans le vide, communément notée
  La lumière est l'élément le plus rapide de l'univers, pour aller de la terre à la lune il faudrait à peine 1.2 seconde pour
   la lumière pour y parvenir`];
 
-  const testingProject = ['vous avez dit test pour voir si je fonctionner correctement.. , ne vous inquiétez pas je marche trés bien grâce à vous !']
+  const testingProject = 
+  ['vous avez dit test pour voir si je fonctionner correctement.. , ne vous inquiétez pas je marche trés bien grâce à vous !']
 
   
 
@@ -78,7 +81,12 @@ else if (message.includes('test')){
     speech.text =answerForTest;
 
 }
-
+ else if (message.includes('bonjour')||message.includes('Bonjour')||message.includes('salut')||message.includes('Salut')||
+ message.includes('hey')||message.includes('Hey')||message.includes('hey kena')||message.includes('Hey Kena')||
+ message.includes('Salut Kenna')||message.includes('salut kenna')||message.includes('coucou')){
+const answerForHello = hello[Math.floor(Math.random()*hello.length)];
+speech.text =answerForHello;
+ }
 
 
 else{
@@ -90,11 +98,11 @@ else{
 
 
     speech.volume = 1;
-    speech.rate = 1.8;
-    speech.pitch=2;
+    speech.rate = 2.3;
+    speech.pitch=0.2;
 
     window.speechSynthesis.speak(speech);
+    console.log(speech.text);
 
 }
-
 
