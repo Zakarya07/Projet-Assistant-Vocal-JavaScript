@@ -1,62 +1,104 @@
-*{
+* {
     padding: 0;
     margin: 0;
-    font-weight: 900;
     box-sizing: border-box;
-    font-family: "Helvetica",sans-serif;
-    font-weight: 200;
+
 
 }
 
+body {
+    background-color: #1b1b75;
+    font-family: "Helvetica", sans-serif;
+    font-weight: 200;
+}
 
- 
+h2 {
+    margin: 30px;
+    text-align: left;
+    color: white;
+}
+
+.btn_and_arrow_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn_and_arrow_container * {
+    margin: 0 1vw;
+}
+
+.btn_and_arrow_container p{
+    color: white;
+    font-size: 1.2em;
+}
+
 button {
-    
-    width: 15%;
-    border: 2.5px rgb(0, 128, 248) solid;
-    box-sizing: content-box;
+    width: 12vw;
+    border: 4px rgb(0, 128, 248) solid;
     color: rgb(22, 1, 1);
-    font-size: 1.4rem;
+    font-size: 1.6em;
     margin: 0 25px;
     border-radius: 2px;
     font-weight: bold;
+    height: 5vh;
 
 }
 
+button i {
+    color: rgb(24, 164, 219);
+    font-size: 1em;
+    margin: 0 0.5vw !important;
+}
 
-h1{
+
+i.fa-arrow-left {
+    color: crimson;
+    font-size: x-large;
+    animation: comeAndGo 0.5s ease-in-out alternate forwards 3;
+}
+
+
+
+h1 {
     position: absolute;
-    top: 18%;
-    margin: 15px;
+    top: 20vh;
+    margin:0 1vw;
     font-style: italic;
     font-weight: bold;
     margin-top: 75px;
     color: rgb(255, 220, 24);
 }
 
-h1::before{
+h1::before {
     content: " '' ";
+    font-size: 0.8em;
+    color: rgb(255, 220, 24);
+    font-style: normal;
+    padding: 0 0.2vw;
 }
 
 
 
-h1::after{
+h1::after {
     content: " '' ";
+    font-size: 0.8em;
+    color: rgb(255, 220, 24);
+    font-style: normal;
+    padding: 0 0.2vw;
 }
 
+/*-------------------------------------- Animations----------------------------------- */
 
-i{
-    margin: 10px;
-    color: rgb(24, 164, 219);
-    font-size: 1.35rem;
 
-} 
+@keyframes comeAndGo{
 
-body{
-    background-color:#0e0e44;
+from{
+    transform: translateX(1vw);
 }
 
-h2{
-    margin: 30px;
-    color: white;
+to{
+ transform: translateX(-1.8vw);
+}
+
 }

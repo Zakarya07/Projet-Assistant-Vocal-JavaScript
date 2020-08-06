@@ -45,6 +45,7 @@ recognition.onresult = function (event) {
 
 btn.addEventListener('click', () => {
     recognition.start();
+    
 });
 
 
@@ -88,8 +89,9 @@ function readOutLoud(message) {
 
 
     speech.volume = 1;
-    speech.rate = 1;
+    speech.rate = 2;
     speech.pitch=0.2;
+    
 
     window.speechSynthesis.speak(speech);
     console.log(speech.text);
