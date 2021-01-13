@@ -1,0 +1,192 @@
+// Variables
+$yellow_color:#ffdc18;
+// General Code
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  background-color: #1b1b75;
+  font-family: "Helvetica", sans-serif;
+  font-weight: 200;
+
+  h2 {
+    margin: 30px;
+    text-align: left;
+    color: white;
+  }
+
+  .btn_and_arrow_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    p {
+      color: white;
+      font-size: 1.2em;
+    }
+  }
+
+  button {
+    width: 12vw;
+    border: 3px #000000 solid;
+    color: rgb(22, 1, 1);
+    font-size: 1.6em;
+    margin: 0 25px;
+    border-radius: 2px;
+    font-weight: bold;
+    height: 5vh;
+    outline: none;
+   
+    i {
+      color: rgb(24, 164, 219);
+      font-size: 1em;
+      margin: 0 0.5vw !important;
+    }
+  }
+
+  i.fa-arrow-left {
+    color: crimson;
+    font-size: x-large;
+    animation: comeAndGo 2s ease-out forwards 1;
+  }
+
+  h1 {
+    position: absolute;
+    top: 20vh;
+    margin: 0 1vw;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 75px;
+    color:$yellow_color;
+
+    &::before,
+    &::after {
+      content: " '' ";
+      font-size: 0.8em;
+      color:$yellow_color;
+      font-style: normal;
+      padding: 0 0.2vw;
+    }
+  }
+
+  #working {
+    background-image: url("../Images/circle_turn_onstart.jpg");
+    position: absolute;
+    top:8.5vh;
+    left:47.5vw;
+    border-radius: 50%;
+    background-size:cover;
+    background-position: left top;
+    height: 50px;
+    width:50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #000000;
+    display: none;
+    color: whitesmoke;
+    box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.596);
+  }
+
+  .working_animation_turning {
+    animation: turning 5s linear infinite;
+  }
+}
+
+
+/*-------------------------------------- Animations----------------------------------- */
+@keyframes comeAndGo {
+  25% {
+    transform: translateX(-1vw);
+  }
+
+  50% {
+    transform: translateX(-0vw);
+  }
+
+  75% {
+    transform: translateX(-1vw);
+  }
+
+  100% {
+    transform: translateX(-0.5vw);
+  }
+
+}
+
+@keyframes turning {
+
+  10% {
+    filter: brightness(150%);
+    background-size: cover;
+    background-position: center 33%;
+  }
+
+  20% {
+    transform:scale3d(1,1,1.5) rotateZ(40deg);
+    filter: brightness(200%);
+    background-size: cover;
+    background-position: right center;
+  }
+
+  30% {
+    background-size: cover;
+    transform:scale3d(1,1,1.5);
+    filter: brightness(100%);
+    background-position: left center;
+  }
+
+  40% {
+    background-size: cover;
+    transform:scale3d(1,1,1.2) rotateZ(70deg);
+    filter: brightness(75%);
+    background-position: left center;
+   }
+
+  50% {
+    background-size: cover;
+    transform: scale3d(1,1,1.5);
+    filter: brightness(150%);
+    background-position: 17% top;
+  }
+
+  60% {
+    background-size: cover;
+    transform: scale(1.1);
+    filter: brightness(100%);
+    background-position: 100% center;
+  }
+
+  70% {
+    background-size: cover;
+    transform: scale(1.1);
+    filter:hue-rotate(120deg);
+    background-position: center 89%;
+  }
+
+  80% {
+    background-size: cover;
+    transform:rotateZ(40deg);
+    filter: brightness(100%);
+    background-position: center top;
+  }
+
+  90% {
+    background-size: cover;
+    transform: scale(1.1);
+    filter:hue-rotate(100deg);
+    background-position: 100% 100%;
+  }
+
+  100% {
+    background-size: cover;
+    filter: brightness(40%);
+    background-position: center bottom;
+  }
+
+}
