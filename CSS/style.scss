@@ -190,3 +190,14 @@ body {
   }
 
 }
+
+
+// M E D I A   Q U E R I E S
+
+@media (max-width:1600px){
+  body #working{
+    position: absolute;
+    left: 55.5vw;
+    top: 9.5vh;
+  }
+}
